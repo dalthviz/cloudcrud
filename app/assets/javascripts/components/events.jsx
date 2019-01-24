@@ -17,6 +17,10 @@ class Events extends React.Component{
         this.handleUserInput = this.handleUserInput.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.addNewEvent = this.addNewEvent.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.deleteEvent = this.deleteEvent.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.updateEvent = this.updateEvent.bind(this);
     }
 
     handleUserInput(obj) {
@@ -34,9 +38,9 @@ class Events extends React.Component{
                     };
         self = this;
         $.ajax({
-            type:    "POST",
-            url:     "/events",
-            data:    {event: event},
+            type: 'POST',
+            url: '/events',
+            data: {event: event},
             success: function(data) {
                 self.addNewEvent(data);
             },
@@ -51,7 +55,53 @@ class Events extends React.Component{
         events.push(event);
         this.setState({
             events: events.sort(function(a, b){
-                return new Date(a.created_at) - new Date(b.created_at);
+                return -(new Date(a.created_at) - new Date(b.created_at));
+            })
+        });
+    }
+
+    handleDelete(id){
+        self = this;
+        $.ajax({
+            type: 'DELETE',
+            url: `/events/${id}`,
+            success: function(data) {
+                self.deleteEvent(id);
+            },
+            error: function(xhr, error) {
+                console.log(error);
+            }
+        });
+    }
+
+    deleteEvent(id){
+        let events = this.state.events.filter((event) => event.id !== id);
+        this.setState({
+            events: events
+        });
+    }
+
+    handleUpdate(event){
+        self = this;
+        $.ajax({
+            type: 'PUT',
+            url: `/events/${event.id}`,
+            data: {event: event},
+            success: function(data) {
+                self.updateEvent(data);
+            },
+            error: function(xhr, error) {
+                console.log(error);
+            }
+        });
+    }
+
+    updateEvent(event){
+        let newEvents = this.state.events.filter((event) => event.id !== id);
+        
+        this.setState({
+            events: newEvents.sort(function(a, b){
+                return -(new Date(a.created_at) - new Date(b.created_at));
             })
         });
     }
@@ -73,7 +123,10 @@ class Events extends React.Component{
                        />
             {this.state.events.map((event)=>{
                 return (
-                    <Event key={event.id} event={event}/>
+                    <Event key={event.id} event={event} handleDelete={this.handleDelete}
+                        handleUpdate={this.handleUpdate}
+                        categories={this.state.categories}
+                        types={this.state.types}/>
                 )
             })}
 
