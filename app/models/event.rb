@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-    enum category: { conferencia: 0, seminario: 1, congreso: 2, curso: 3 }
-    enum type: { presencial: 0, virtual: 1}
+    enum category: [:conferencia, :seminario, :congreso, :curso]
+    enum assist_type: [:presencial, :virtual]
 end

@@ -7,11 +7,11 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :address
       t.datetime :start_date
       t.datetime :end_date
-      t.integer :type
+      t.integer :assist_type
 
       t.timestamps
     end
     add_index :events, :category
-    add_index :events, :type
+    add_index :events, :assist_type
   end
 end

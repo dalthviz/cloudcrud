@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20190124154153) do
     t.string   "address"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer  "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "assist_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["assist_type"], name: "index_events_on_assist_type", using: :btree
     t.index ["category"], name: "index_events_on_category", using: :btree
-    t.index ["type"], name: "index_events_on_type", using: :btree
   end
 
 end
