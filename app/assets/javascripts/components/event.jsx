@@ -34,7 +34,17 @@ class Event extends React.Component{
         });
     }
 
-    updateEvent(event){
+    updateEvent(e){
+        e.preventDefault();
+        let event = {
+                     id: this.props.event.id,
+                     name: this.name.value,
+                     category: this.category.value,
+                     place: this.place.value,
+                     address: this.address.value,
+                     start_date: this.start_date.value,
+                     end_date: this.end_date.value,
+                     assist_type: this.assist_type.value}
         this.props.handleUpdate(event);
     }
 
@@ -78,7 +88,7 @@ class Event extends React.Component{
                                     defaultValue={this.props.event.name}
                                     required/>
                             </label><br/>
-                            {this.selectInput(this.category, this.props.categories,
+                            {this.selectInput('category', this.props.categories,
                                             'la categoria')}
                             <br/>
                             <label>
@@ -107,7 +117,7 @@ class Event extends React.Component{
                                     ref={input => this.end_date = input}
                                     required/>
                             </label><br/>
-                            {this.selectInput(this.assist_type, this.props.types,
+                            {this.selectInput('assist_type', this.props.types,
                                             'el tipo')}
                                             <br/>
                             <input type='submit' value='Guardar'/>

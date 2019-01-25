@@ -2095,3 +2095,100 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 3889ms (Views: 3861.2ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-24 18:50:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (11.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (20.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 7710ms (Views: 7511.4ms | ActiveRecord: 101.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 19:20:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (11.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (6.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 10832ms (Views: 10644.6ms | ActiveRecord: 87.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 19:35:18 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (211.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (988.5ms)
+Completed 200 OK in 15256ms (Views: 13250.9ms | ActiveRecord: 211.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:02:31 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (136.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (840.6ms)
+Completed 200 OK in 31345ms (Views: 28885.1ms | ActiveRecord: 136.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:05:52 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 5088ms (Views: 4891.8ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/events/undefined" for 127.0.0.1 at 2019-01-24 20:06:08 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"name"=>"evento", "category"=>"conferencia", "place"=>"ee", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"presencial"}, "id"=>"undefined"}
+  [1m[36mEvent Load (96.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 669ms (ActiveRecord: 166.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/events_controller.rb:24:in `update'
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (3.7ms)
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (6.1ms)
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (4.3ms)
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (69.3ms)
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:09:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 10576ms (Views: 10452.5ms | ActiveRecord: 56.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:13:15 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 214ms (Views: 209.6ms | ActiveRecord: 2.4ms)
+
+
+Started PUT "/events/[object%20Object]" for 127.0.0.1 at 2019-01-24 20:13:36 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>{"id"=>"18", "name"=>"evento", "category"=>"conferencia", "place"=>"ee", "address"=>"dd", "start_date"=>"2018-12-31T00:00:00.000Z", "end_date"=>"2019-01-31T00:00:00.000Z", "assist_type"=>"presencial", "created_at"=>"2019-01-24T22:13:47.577Z", "updated_at"=>"2019-01-24T22:13:47.577Z"}, "name"=>"evento", "category"=>"conferencia", "place"=>"ee", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"presencial"}, "id"=>"[object Object]"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=[object Object]):
+  
+app/controllers/events_controller.rb:24:in `update'
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (9.3ms)
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.7ms)
+  Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (70.9ms)

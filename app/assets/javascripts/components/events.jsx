@@ -83,12 +83,14 @@ class Events extends React.Component{
 
     handleUpdate(event){
         self = this;
+        console.log(event);
         $.ajax({
             type: 'PUT',
             url: `/events/${event.id}`,
             data: {event: event},
             success: function(data) {
-                self.updateEvent(data);
+                console.log(data);
+                // self.updateEvent(data);
             },
             error: function(xhr, error) {
                 console.log(error);
@@ -97,6 +99,7 @@ class Events extends React.Component{
     }
 
     updateEvent(event){
+        let id = event.id;
         let newEvents = this.state.events.filter((event) => event.id !== id);
         
         this.setState({
