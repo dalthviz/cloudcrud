@@ -56,7 +56,14 @@ class Events extends React.Component{
         this.setState({
             events: events.sort(function(a, b){
                 return -(new Date(a.created_at) - new Date(b.created_at));
-            })
+            }),
+            name: '',
+            category: '',
+            place: '',
+            address: '',
+            start_date: '',
+            end_date: '',
+            assist_type: ''
         });
     }
 
@@ -83,14 +90,12 @@ class Events extends React.Component{
 
     handleUpdate(event){
         self = this;
-        console.log(event);
         $.ajax({
             type: 'PUT',
             url: `/events/${event.id}`,
             data: {event: event},
             success: function(data) {
-                console.log(data);
-                // self.updateEvent(data);
+                self.updateEvent(data);
             },
             error: function(xhr, error) {
                 console.log(error);
@@ -101,7 +106,7 @@ class Events extends React.Component{
     updateEvent(event){
         let id = event.id;
         let newEvents = this.state.events.filter((event) => event.id !== id);
-        
+        newEvents.push(event);
         this.setState({
             events: newEvents.sort(function(a, b){
                 return -(new Date(a.created_at) - new Date(b.created_at));
@@ -124,12 +129,16 @@ class Events extends React.Component{
                        input_end_date={this.state.end_date}
                        input_type={this.state.assist_type}
                        />
+            <hr></hr>
             {this.state.events.map((event)=>{
                 return (
-                    <Event key={event.id} event={event} handleDelete={this.handleDelete}
+                    <div key={event.id}>
+                        <Event event={event} handleDelete={this.handleDelete}
                         handleUpdate={this.handleUpdate}
                         categories={this.state.categories}
                         types={this.state.types}/>
+                        <hr></hr>
+                    </div>
                 )
             })}
 

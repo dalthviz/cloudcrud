@@ -20,6 +20,9 @@ class EventForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.onFormSubmit();
+        this.setState({
+            new: false
+        });
     }
 
     selectInput(name, values, value, label){

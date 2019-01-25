@@ -46,13 +46,17 @@ class Event extends React.Component{
                      end_date: this.end_date.value,
                      assist_type: this.assist_type.value}
         this.props.handleUpdate(event);
+        this.setState({
+            details: false,
+            edit: false
+        });
     }
 
-    selectInput(ref, values, label){
+    selectInput(ref, values, defaultValue, label){
         return (
             <label>
-                <select ref={input => this[ref] = input} required>
-                    <option key='-1' value='' disabled defaultValue hidden>Seleccione {label}...</option>
+                <select defaultValue={defaultValue} ref={input => this[ref] = input} required>
+                    <option key='-1' value='' disabled hidden>Seleccione {label}...</option>
                     {Object.keys(values).map(key=>{
                         return <option key={key} value={key}>{key}</option>
                     })}
@@ -82,22 +86,27 @@ class Event extends React.Component{
                     : this.state.edit?
                         <form onSubmit={this.updateEvent}>
                             <label>
+                                Nombre: 
                                 <input name='name'
                                     placeholder='Nombre del evento'
                                     ref={input => this.name = input}
                                     defaultValue={this.props.event.name}
                                     required/>
                             </label><br/>
-                            {this.selectInput('category', this.props.categories,
-                                            'la categoria')}
-                            <br/>
                             <label>
+                                Categoría: 
+                                {this.selectInput('category', this.props.categories,
+                                                    this.props.event.category, 'la categoria')}
+                            </label><br/>
+                            <label>
+                                Lugar: 
                                 <input name='place' placeholder='Lugar del evento'
                                     defaultValue={this.props.event.place}
                                     ref={input => this.place = input}
                                     required/>
                             </label><br/>
                             <label>
+                                Dirección: 
                                 <input name='address' placeholder='Dirección del evento'
                                     defaultValue={this.props.event.address}
                                     ref={input => this.address = input}
@@ -117,9 +126,11 @@ class Event extends React.Component{
                                     ref={input => this.end_date = input}
                                     required/>
                             </label><br/>
-                            {this.selectInput('assist_type', this.props.types,
-                                            'el tipo')}
-                                            <br/>
+                            <label>
+                                Tipo de asistencia: 
+                                {this.selectInput('assist_type', this.props.types,
+                                                this.props.event.assist_type, 'el tipo')}
+                            </label><br/>
                             <input type='submit' value='Guardar'/>
                             <button onClick={()=>this.setState({details: false, edit: false})}>Cancelar</button>
                             </form>
@@ -131,15 +142,21 @@ class Event extends React.Component{
         return (
             <div>
                 {this.renderEvent()}
-                {this.state.details && !this.state.edit? <button onClick={this.hideDetails}>Ocultar detalles</button> :
-                                     !this.state.edit? <button onClick={this.showDetails}>Ver detalles</button>: <div></div>}
-                {this.state.edit? <div></div>  :
-                                  <div>
-                                      <button onClick={this.changeEvent}>Editar</button>
-                                      <button onClick={() => this.props.handleDelete(this.props.event.id)}>Borrar</button>
-                                  </div>}                
-                
-                
+                {this.state.details && !this.state.edit?
+                        <div>
+                            <button onClick={this.hideDetails}>Ocultar detalles</button>
+                            <button onClick={this.changeEvent}>Editar</button>
+                            <button onClick={() => this.props.handleDelete(this.props.event.id)}>Borrar</button>
+                        </div>
+                    :
+                    !this.state.edit?
+                        <div>
+                            <button onClick={this.showDetails}>Ver detalles</button>
+                            <button onClick={this.changeEvent}>Editar</button>
+                            <button onClick={() => this.props.handleDelete(this.props.event.id)}>Borrar</button>
+                        </div>
+                    :
+                    <div></div>}                
             </div>
         )
     }

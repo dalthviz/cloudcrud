@@ -2192,3 +2192,264 @@ app/controllers/events_controller.rb:24:in `update'
   Rendering /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
   Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.7ms)
   Rendered /home/daniel/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (70.9ms)
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:16:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (4.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 7573ms (Views: 7508.9ms | ActiveRecord: 8.3ms)
+
+
+Started PUT "/events/18" for 127.0.0.1 at 2019-01-24 20:16:32 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"18", "name"=>"evento", "category"=>"conferencia", "place"=>"ee", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"presencial"}, "id"=>"18"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (34.8ms)[0m  [1m[33mUPDATE "events" SET "address" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["address", "dds"], ["updated_at", "2019-01-25 01:16:32.785017"], ["id", 18]]
+  [1m[35m (92.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 171ms (Views: 0.2ms | ActiveRecord: 130.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:16:55 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 200ms (Views: 195.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:18:01 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 3556ms (Views: 3515.3ms | ActiveRecord: 1.9ms)
+
+
+Started PUT "/events/18" for 127.0.0.1 at 2019-01-24 20:18:12 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"18", "name"=>"evento", "category"=>"conferencia", "place"=>"eek", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"presencial"}, "id"=>"18"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.4ms)[0m  [1m[33mUPDATE "events" SET "place" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["place", "eek"], ["updated_at", "2019-01-25 01:18:12.871054"], ["id", 18]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 48ms (Views: 1.3ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:18:22 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 225ms (Views: 218.7ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/events/18" for 127.0.0.1 at 2019-01-24 20:18:37 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"18", "name"=>"evento", "category"=>"conferencia", "place"=>"eekl", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"virtual"}, "id"=>"18"}
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (40.1ms)[0m  [1m[33mUPDATE "events" SET "place" = $1, "assist_type" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["place", "eekl"], ["assist_type", 1], ["updated_at", "2019-01-25 01:18:37.283242"], ["id", 18]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 60ms (Views: 1.0ms | ActiveRecord: 49.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:20:11 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 3462ms (Views: 3424.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/events/18" for 127.0.0.1 at 2019-01-24 20:20:36 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"18", "name"=>"evento", "category"=>"congreso", "place"=>"ee", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"virtual"}, "id"=>"18"}
+  [1m[36mEvent Load (2.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[33mUPDATE "events" SET "category" = $1, "place" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["category", 2], ["place", "ee"], ["updated_at", "2019-01-25 01:20:36.271455"], ["id", 18]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 4.4ms | ActiveRecord: 13.1ms)
+
+
+Started PUT "/events/18" for 127.0.0.1 at 2019-01-24 20:21:01 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"18", "name"=>"evento", "category"=>"conferencia", "place"=>"eell", "address"=>"dds", "start_date"=>"2018-12-31", "end_date"=>"2019-01-31", "assist_type"=>"virtual"}, "id"=>"18"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "category" = $1, "place" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["category", 0], ["place", "eell"], ["updated_at", "2019-01-25 01:21:01.172448"], ["id", 18]]
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 58ms (Views: 1.0ms | ActiveRecord: 37.7ms)
+
+
+Started DELETE "/events/18" for 127.0.0.1 at 2019-01-24 20:21:09 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.8ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 18]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for EventsController#destroy, rendering head :no_content
+Completed 204 No Content in 105ms (ActiveRecord: 47.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:26:46 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 3630ms (Views: 3585.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 20:27:06 -0500
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"a", "category"=>"congreso", "place"=>"a", "address"=>"a", "start_date"=>"2018-12-31", "end_date"=>"2019-02-08", "assist_type"=>"virtual"}}
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (31.2ms)[0m  [1m[32mINSERT INTO "events" ("name", "category", "place", "address", "start_date", "end_date", "assist_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "a"], ["category", 2], ["place", "a"], ["address", "a"], ["start_date", "2018-12-31 00:00:00"], ["end_date", "2019-02-08 00:00:00"], ["assist_type", 1], ["created_at", "2019-01-25 01:27:06.774210"], ["updated_at", "2019-01-25 01:27:06.774210"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 54ms (Views: 0.8ms | ActiveRecord: 43.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:30:27 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 3357ms (Views: 3319.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 20:31:01 -0500
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"jj", "category"=>"seminario", "place"=>"pp", "address"=>"o", "start_date"=>"2019-01-07", "end_date"=>"2019-01-25", "assist_type"=>"presencial"}}
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "category", "place", "address", "start_date", "end_date", "assist_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "jj"], ["category", 1], ["place", "pp"], ["address", "o"], ["start_date", "2019-01-07 00:00:00"], ["end_date", "2019-01-25 00:00:00"], ["assist_type", 0], ["created_at", "2019-01-25 01:31:01.315788"], ["updated_at", "2019-01-25 01:31:01.315788"]]
+  [1m[35m (806.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 821ms (Views: 0.7ms | ActiveRecord: 811.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:34:03 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 6305ms (Views: 6268.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:34:59 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 3659ms (Views: 3623.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:35:30 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 3668ms (Views: 3604.6ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2019-01-24 20:35:51 -0500
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"sdfsd", "category"=>"congreso", "place"=>"fdsf", "address"=>"sdfsd", "start_date"=>"2019-01-07", "end_date"=>"2019-01-25", "assist_type"=>"presencial"}}
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "category", "place", "address", "start_date", "end_date", "assist_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "sdfsd"], ["category", 2], ["place", "fdsf"], ["address", "sdfsd"], ["start_date", "2019-01-07 00:00:00"], ["end_date", "2019-01-25 00:00:00"], ["assist_type", 0], ["created_at", "2019-01-25 01:35:51.432334"], ["updated_at", "2019-01-25 01:35:51.432334"]]
+  [1m[35m (27.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 51ms (Views: 1.9ms | ActiveRecord: 34.0ms)
+
+
+Started PUT "/events/21" for 127.0.0.1 at 2019-01-24 20:36:15 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"21", "name"=>"sdfsdsdf", "category"=>"curso", "place"=>"a", "address"=>"sdd", "start_date"=>"2019-01-07", "end_date"=>"2019-01-25", "assist_type"=>"virtual"}, "id"=>"21"}
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "category" = $2, "place" = $3, "address" = $4, "assist_type" = $5, "updated_at" = $6 WHERE "events"."id" = $7[0m  [["name", "sdfsdsdf"], ["category", 3], ["place", "a"], ["address", "sdd"], ["assist_type", 1], ["updated_at", "2019-01-25 01:36:15.648578"], ["id", 21]]
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 59ms (Views: 2.0ms | ActiveRecord: 18.6ms)
+
+
+Started DELETE "/events/20" for 127.0.0.1 at 2019-01-24 20:36:51 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 20]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+No template found for EventsController#destroy, rendering head :no_content
+Completed 204 No Content in 66ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:40:55 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 6615ms (Views: 6563.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/21" for 127.0.0.1 at 2019-01-24 20:41:18 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (84.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 21]]
+  [1m[35m (20.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for EventsController#destroy, rendering head :no_content
+Completed 204 No Content in 155ms (ActiveRecord: 105.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 20:44:06 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 3762ms (Views: 3733.5ms | ActiveRecord: 7.8ms)
+
+
+Started PUT "/events/19" for 127.0.0.1 at 2019-01-24 20:44:45 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"19", "name"=>"a", "category"=>"congreso", "place"=>"a", "address"=>"a", "start_date"=>"2018-12-31", "end_date"=>"2019-02-08", "assist_type"=>"virtual"}, "id"=>"19"}
+  [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 6.8ms)
+
+
+Started PUT "/events/19" for 127.0.0.1 at 2019-01-24 20:45:04 -0500
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"19", "name"=>"a", "category"=>"congreso", "place"=>"a", "address"=>"o", "start_date"=>"2018-12-31", "end_date"=>"2019-02-08", "assist_type"=>"virtual"}, "id"=>"19"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.4ms)[0m  [1m[33mUPDATE "events" SET "address" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["address", "o"], ["updated_at", "2019-01-25 01:45:04.878931"], ["id", 19]]
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 55ms (Views: 0.7ms | ActiveRecord: 37.0ms)
+
+
+Started DELETE "/events/19" for 127.0.0.1 at 2019-01-24 20:45:09 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 19]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+No template found for EventsController#destroy, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 6.6ms)
+
+

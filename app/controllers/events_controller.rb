@@ -21,8 +21,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    event = Event.find(params[:id])
-    status = event.update_attributes(event_params)
+    @event = Event.find(params[:id])
+    status = @event.update_attributes(event_params)
     if status
       render json: @event
     else
