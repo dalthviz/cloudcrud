@@ -26,7 +26,7 @@ gem install rails -v 5.0.1
 ```
 sudo apt-get install postgresql postgresql-contrib 
 
-sudo apt-get postgresql-server-dev-{pg.version}
+sudo apt-get install postgresql-server-dev-{pg.version}
 ```
 Where `{pg.version}` refers to the version of postgresql installed for example `9.5` 
 
