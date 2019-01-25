@@ -1,13 +1,16 @@
 class EventsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
-    @event = Event.new
-    @events = Event.order('created_at DESC')
+    @event = current_user.events.new
+    @events = current_user.events.order('created_at DESC')
     @categories = Event.categories
     @types = Event.assist_types
   end
 
   def create
-    @event = Event.create(event_params)
+    @event = current_user.events.create(event_params)
 
     if @event.save
       render json: @event
@@ -17,11 +20,11 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    Event.destroy(params[:id])
+    current_user.events.destroy(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
     status = @event.update_attributes(event_params)
     if status
       render json: @event
