@@ -3276,3 +3276,66 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 157.253.92.55 at 2019-01-24 23:40:41 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 157.253.92.55 at 2019-01-24 23:40:41 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 372ms (Views: 359.5ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/users/sign_in" for 157.253.92.55 at 2019-01-24 23:42:29 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nURstk0hswpQRJ7hrMmLudT7BBIVZJjT0bcjrYrgK79V0Tnlouyo6k6yYNiH6QBoBYOaAy6K9oZBsMXJ6sCDRw==", "user"=>{"email"=>"d.althviz10@uniandes.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "d.althviz10@uniandes.edu.co"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 163ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nURstk0hswpQRJ7hrMmLudT7BBIVZJjT0bcjrYrgK79V0Tnlouyo6k6yYNiH6QBoBYOaAy6K9oZBsMXJ6sCDRw==", "user"=>{"email"=>"d.althviz10@uniandes.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 169ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 157.253.92.55 at 2019-01-24 23:42:35 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3bXZfiqVbbCrQtc4HkGr5qQHFbykQvu+DkbtMC/7kAsVIIwtxVh2ULW0KQE1YSA3dX+LrZ+sleueQQtUT9s48w==", "user"=>{"email"=>"d.althviz10@uniandes.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "d.althviz10@uniandes.edu.co"], ["LIMIT", 1]]
+Redirected to http://172.24.42.29:8080/
+Completed 302 Found in 149ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 157.253.92.55 at 2019-01-24 23:42:35 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1 ORDER BY created_at DESC[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 25.3ms | ActiveRecord: 3.0ms)
+
+
+Started PUT "/events/1" for 157.253.92.55 at 2019-01-24 23:43:08 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#update as */*
+  Parameters: {"event"=>{"id"=>"1", "name"=>"Evento", "category"=>"seminario", "place"=>"Lugar", "address"=>"CR 3 # 3 - 42", "start_date"=>"2019-01-16", "end_date"=>"2019-01-24", "assist_type"=>"presencial"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."user_id" = $1 AND "events"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "events" SET "start_date" = $1, "end_date" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["start_date", "2019-01-16 00:00:00"], ["end_date", "2019-01-24 00:00:00"], ["updated_at", "2019-01-25 04:43:08.209010"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+

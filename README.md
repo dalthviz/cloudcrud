@@ -47,6 +47,9 @@ rails db:migrate
 rails s
 ```
 
+For a run as a daemon, instead of `rails s` use `rails s -d -p 8080 -b 0.0.0.0`
+
+
 # Gems
 
 * [rails](https://github.com/rails/rails)
