@@ -3339,3 +3339,39 @@ Unpermitted parameter: id
 Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for 157.253.92.55 at 2019-01-24 23:45:26 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1 ORDER BY created_at DESC[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 157.253.92.55 at 2019-01-24 23:45:32 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wNekeT8SYrYu9nFgtBBVPwbpL3pPZVLQF1qh7T1/utE/HGnAJow3/abNk9B8dZ+BuyGgagrqlhHx3+Iflyz71g=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://172.24.42.29:8080/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 157.253.92.55 at 2019-01-24 23:45:32 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 157.253.92.55 at 2019-01-24 23:45:32 -0500
+Cannot render console from 157.253.92.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /home/SIS/d.althviz10/.rvm/gems/ruby-2.3.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
