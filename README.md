@@ -50,4 +50,5 @@ rails s
 * [rails](https://github.com/rails/rails)
 * [devise](https://github.com/plataformatec/devise)
 * [react-rails](https://github.com/reactjs/react-rails)
+* [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails)
 

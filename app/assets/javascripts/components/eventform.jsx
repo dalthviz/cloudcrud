@@ -27,14 +27,16 @@ class EventForm extends React.Component{
 
     selectInput(name, values, value, label){
         return (
-            <label>
-                <select name={name} value={value} onChange={this.handleChange} required>
+            <div className='form-group'>
+                <label>
+                </label>
+                <select className='form-control' name={name} value={value} onChange={this.handleChange} required>
                     <option key='-1' value='' disabled defaultValue hidden>Seleccione {label}...</option>
                     {Object.keys(values).map(key=>{
                         return <option key={key} value={key}>{key}</option>
                     })}
                 </select>
-            </label>
+            </div>
         )
     }
     
@@ -44,52 +46,61 @@ class EventForm extends React.Component{
                 <h3>Crea un nuevo evento</h3>
                 {this.state.new?
                     <form onSubmit={this.handleSubmit}>
-                        <label>
+                        <div className='form-group'>
+                            <label>
+                            </label>
                             <input name='name'
                                 placeholder='Nombre del evento'
                                 value={this.props.input_name}
                                 onChange={this.handleChange}
+                                className='form-control'
                                 required/>
-                        </label><br/>
+                        </div>
                         {this.selectInput('category', this.props.categories,
                                         this.props.input_category,
                                         'la categoria')}
-                        <br/>
-                        <label>
+                        <div className='form-group'>
+                            <label></label>
                             <input name='place' placeholder='Lugar del evento'
                                 value={this.props.input_place}
                                 onChange={this.handleChange}
+                                className='form-control'
                                 required/>
-                        </label><br/>
-                        <label>
+                        </div>
+                        <div className='form-group'>
+                            <label></label>
                             <input name='address' placeholder='Dirección del evento'
                                 value={this.props.input_address}
                                 onChange={this.handleChange}
-                                required/>
-                        </label><br/>
-                        <label>
-                            Fecha de inicio: 
+                                className='form-control'
+                                required/>  
+                        </div>
+                        <div className='form-group'>
+                        <label>Fecha de inicio: </label>
                             <input type='date' name='start_date' placeholder='Fecha de inicio del evento'
                                 value={this.props.input_start_date}
                                 onChange={this.handleChange}
+                                className='form-control'
                                 required/>
-                        </label><br/>
-                        <label>
-                            Fecha de fin:
+                        </div>
+                        <div className='form-group'>
+                            <label>Fecha de fin: </label>
                             <input type='date' name='end_date' placeholder='Fecha de finalización del evento'
                                 value={this.props.input_end_date}
                                 onChange={this.handleChange}
+                                className='form-control'
                                 required/>
-                        </label><br/>
+                        </div>
                         {this.selectInput('assist_type', this.props.types,
                                         this.props.input_type,
                                         'el tipo')}
                                         <br/>
-                        <input type='submit' value='Guardar'/>
-                        <button onClick={() => this.setState({new: false})}>Cancelar</button>
+                        <input type='submit' value='Guardar'
+                                class='btn btn-primary'/>
+                        <button onClick={() => this.setState({new: false})} class='btn btn-danger'>Cancelar</button>
                     </form>
                     :
-                    <button onClick={() => this.setState({new: true})}>Crear evento</button>
+                    <button onClick={() => this.setState({new: true})} class='btn btn-primary'>Crear evento</button>
                 }
                 
                 
